@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Cute+Font");
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -378,6 +379,22 @@ a {
 .hidden {
   display: none !important; }
 
+p {
+  font-family: 'Cute Font', cursive;
+  font-size: 3.0rem;
+  color: #cccccc;
+  text-align: center; }
+  p + p {
+    margin-top: 0; }
+  p:first-child {
+    margin-top: 0.25em; }
+
+object {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none; }
+
 .mainWrapper {
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -413,15 +430,11 @@ a {
   .viewPort.showOverflow {
     overflow: initial; }
 
-p {
-  font-size: 1.6rem;
-  font-weight: bolder;
-  color: #777777;
-  text-align: center; }
-  p + p {
-    margin-top: 0; }
-  p:first-child {
-    margin-top: 0.5em; }
+.volWarning {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+  font-size: 1.4rem;
+  letter-spacing: 0.1em; }
 
 @-webkit-keyframes ghostFloat {
   0% {
@@ -478,7 +491,7 @@ p {
     transform: translateX(-100%); } }
 
 @-webkit-keyframes ghostOne {
-  35% {
+  85% {
     -webkit-transform: translate(-20vw, -25vh) scale(2.5);
     transform: translate(-20vw, -25vh) scale(2.5);
     opacity: 1; }
@@ -488,7 +501,7 @@ p {
     opacity: 0; } }
 
 @keyframes ghostOne {
-  35% {
+  85% {
     -webkit-transform: translate(-20vw, -25vh) scale(2.5);
     transform: translate(-20vw, -25vh) scale(2.5);
     opacity: 1; }
@@ -498,83 +511,83 @@ p {
     opacity: 0; } }
 
 @-webkit-keyframes ghostTwo {
-  25% {
+  75% {
     -webkit-transform: translate(15vw, 20vh) scale(3.5);
     transform: translate(15vw, 20vh) scale(3.5);
     opacity: 1; }
   100% {
-    -webkit-transform: translate(40vw, 60vh) scale(15);
-    transform: translate(40vw, 60vh) scale(15);
+    -webkit-transform: translate(40vw, 60vh) scale(5);
+    transform: translate(40vw, 60vh) scale(5);
     opacity: 0; } }
 
 @keyframes ghostTwo {
-  25% {
+  75% {
     -webkit-transform: translate(15vw, 20vh) scale(3.5);
     transform: translate(15vw, 20vh) scale(3.5);
     opacity: 1; }
   100% {
-    -webkit-transform: translate(40vw, 60vh) scale(15);
-    transform: translate(40vw, 60vh) scale(15);
+    -webkit-transform: translate(40vw, 60vh) scale(5);
+    transform: translate(40vw, 60vh) scale(5);
     opacity: 0; } }
 
 @-webkit-keyframes ghostThree {
-  45% {
+  85% {
     -webkit-transform: translate(10vw, -15vh) scale(3.5);
     transform: translate(10vw, -15vh) scale(3.5);
     opacity: 1; }
   100% {
-    -webkit-transform: translate(-5vw, 25vh) scale(15);
-    transform: translate(-5vw, 25vh) scale(15);
+    -webkit-transform: translate(-5vw, 25vh) scale(7);
+    transform: translate(-5vw, 25vh) scale(7);
     opacity: 0; } }
 
 @keyframes ghostThree {
-  45% {
+  85% {
     -webkit-transform: translate(10vw, -15vh) scale(3.5);
     transform: translate(10vw, -15vh) scale(3.5);
     opacity: 1; }
   100% {
-    -webkit-transform: translate(-5vw, 25vh) scale(15);
-    transform: translate(-5vw, 25vh) scale(15);
+    -webkit-transform: translate(-5vw, 25vh) scale(7);
+    transform: translate(-5vw, 25vh) scale(7);
     opacity: 0; } }
 
 @-webkit-keyframes ghostFour {
-  20% {
+  70% {
     -webkit-transform: translate(-10vw, 15vh) scale(4);
     transform: translate(-10vw, 15vh) scale(4);
     opacity: 1; }
   100% {
-    -webkit-transform: translate(-30vw, 40vh) scale(15);
-    transform: translate(-30vw, 40vh) scale(15);
+    -webkit-transform: translate(-30vw, 40vh) scale(9);
+    transform: translate(-30vw, 40vh) scale(9);
     opacity: 0; } }
 
 @keyframes ghostFour {
-  20% {
+  70% {
     -webkit-transform: translate(-10vw, 15vh) scale(4);
     transform: translate(-10vw, 15vh) scale(4);
     opacity: 1; }
   100% {
-    -webkit-transform: translate(-30vw, 40vh) scale(15);
-    transform: translate(-30vw, 40vh) scale(15);
+    -webkit-transform: translate(-30vw, 40vh) scale(9);
+    transform: translate(-30vw, 40vh) scale(9);
     opacity: 0; } }
 
 @-webkit-keyframes ghostFive {
-  30% {
+  80% {
     -webkit-transform: translate(5vw, 5vh) scale(5);
     transform: translate(5vw, 5vh) scale(5);
     opacity: 1; }
   100% {
-    -webkit-transform: translate(60vw, -90vh) scale(16);
-    transform: translate(60vw, -90vh) scale(16);
+    -webkit-transform: translate(60vw, -90vh) scale(8);
+    transform: translate(60vw, -90vh) scale(8);
     opacity: 0; } }
 
 @keyframes ghostFive {
-  30% {
+  80% {
     -webkit-transform: translate(5vw, 5vh) scale(5);
     transform: translate(5vw, 5vh) scale(5);
     opacity: 1; }
   100% {
-    -webkit-transform: translate(60vw, -90vh) scale(16);
-    transform: translate(60vw, -90vh) scale(16);
+    -webkit-transform: translate(60vw, -90vh) scale(8);
+    transform: translate(60vw, -90vh) scale(8);
     opacity: 0; } }
 
 object[data="images/ghost_sideSprite.svg"],
@@ -593,8 +606,11 @@ object[data="images/ghost_frontSprite.svg"] {
   left: 112.5%;
   width: 75%;
   height: 75%;
-  -webkit-animation: 2s ease-in-out infinite ghostMove;
-  animation: 2s ease-in-out infinite ghostMove; }
+  -webkit-animation: 0.75s ease-in-out ghostMove;
+  animation: 0.75s ease-in-out ghostMove; }
+  .ghostMove.inactive {
+    -webkit-animation: initial;
+    animation: initial; }
 
 .ghostFloat {
   width: 100%;
@@ -622,30 +638,30 @@ object[data="images/ghost_frontSprite.svg"] {
   opacity: 0; }
 
 .ghostAll > .escapeGhost.active:nth-child(1) {
-  -webkit-animation: 3s ease-in-out infinite ghostOne;
-  animation: 3s ease-in-out infinite ghostOne; }
+  -webkit-animation: 1s ease-in-out 2 ghostOne;
+  animation: 1s ease-in-out 2 ghostOne; }
 
 .ghostAll > .escapeGhost.active:nth-child(2) {
-  -webkit-animation: 3s ease-in-out infinite ghostTwo;
-  animation: 3s ease-in-out infinite ghostTwo;
+  -webkit-animation: 1s ease-in-out 2 ghostTwo;
+  animation: 1s ease-in-out 2 ghostTwo;
   -webkit-animation-delay: 1.0s;
   animation-delay: 1.0s; }
 
 .ghostAll > .escapeGhost.active:nth-child(3) {
-  -webkit-animation: 3s ease-in-out infinite ghostThree;
-  animation: 3s ease-in-out infinite ghostThree;
+  -webkit-animation: 1s ease-in-out 2 ghostThree;
+  animation: 1s ease-in-out 2 ghostThree;
   -webkit-animation-delay: 1.5s;
   animation-delay: 1.5s; }
 
 .ghostAll > .escapeGhost.active:nth-child(4) {
-  -webkit-animation: 3s ease-in-out infinite ghostFour;
-  animation: 3s ease-in-out infinite ghostFour;
+  -webkit-animation: 1s ease-in-out 2 ghostFour;
+  animation: 1s ease-in-out 2 ghostFour;
   -webkit-animation-delay: 2.0s;
   animation-delay: 2.0s; }
 
 .ghostAll > .escapeGhost.active:nth-child(5) {
-  -webkit-animation: 3s ease-in-out infinite ghostFive;
-  animation: 3s ease-in-out infinite ghostFive;
+  -webkit-animation: 1s ease-in-out 2 ghostFive;
+  animation: 1s ease-in-out 2 ghostFive;
   -webkit-animation-delay: 2.5s;
   animation-delay: 2.5s; }
 
@@ -742,8 +758,14 @@ object[data="images/bellSprite.svg"] {
   top: 0;
   width: 400%; }
 
+object[data="images/bellBroken.svg"] {
+  width: 100%; }
+
 .bellHover {
-  margin-top: 50px; }
+  margin-top: 50px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none; }
   .bellHover:hover {
     -webkit-transform-origin: center;
     transform-origin: center;
