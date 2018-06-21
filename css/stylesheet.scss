@@ -1,0 +1,106 @@
+@charset 'utf-8';
+@import '_normalize';
+@import '_normalizeCustomConfig';
+@import '_variable';
+@import '_font';
+@import '_debugger';
+
+.mainWrapper {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.viewPort {
+  border: 1px dashed red;
+//   flex-basis: 65%;
+//   position: relative;
+//   line-height: 0;
+//   &::before, &::after {
+//     background-color: $colorWhite;
+//     content: '';
+//     display: block;
+//     height: 100%;
+//     position: absolute;
+//     top: 0;
+//     transform: translateX(-50%);
+//     width: 20px;
+//   }
+//   &::before {
+//     left: 33.333333%;
+//   }
+//   &::after {
+//     left: 66.666666%;
+//   }
+}
+
+
+
+// // START SCENE STYLES
+// object[data="images/scene.svg"] {
+//   width: 100%;
+// }
+// @keyframes clouds {
+//   0% {transform: translate(-723px, -5px);}
+//   100% {transform: translate(0px, -5px);}
+// }
+// .clouds {
+//   animation: 60s linear infinite clouds;
+// }
+// // END SCENE STYLES
+
+
+
+// // START PLANE STYLES
+// @keyframes propeller {
+//   0% {transform: rotate(130deg);}
+//   25% {transform: rotate(140deg);}
+//   50% {transform: rotate(130deg);}
+//   75% {transform: rotate(140deg);}
+//   100% {transform: rotate(130deg);}
+// }
+// @keyframes plane {
+//   35% {
+//     transform:
+//     translate(-50%, -85%)
+//     rotate(0)
+//     scale(2)
+//   ;}
+//   100% {
+//     transform:
+//     translate(-250vh, -500vh)
+//     rotate(-65deg)
+//     scale(125)
+//   ;}
+// }
+// object[data="images/plane.svg"] {
+//   animation: 8s infinite plane cubic-bezier(0.25, 0, 0.25, 0.25);
+//   width: 15%;
+//   position: absolute;
+//   bottom: 5.833333%;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   z-index: 1000;
+// }
+// .propeller {
+//   animation: 0.25s linear infinite propeller;
+//   transform-origin: 62px 60px; // Got center coordinates from Sketch App.
+// }
+// // END PLANE STYLES
+
+
+
+// BOOTSTRAP NOTES & RESOLUTION REFERENCE
+// iPhone SE = 320 * 568px
+// iPhone 7 = 375 * 667px
+// iPhone 7 Plus = 414 * 736px
+// iPad & iPad mini = 768 * 1024px
+// iPad Pro = 1024 * 1366px
+// Macbook Air 13-inch = 1440 * 900px
+// Macbook Pro 15-inch = 2560 * 1600px
+// ----------------------------------
+@media (min-width: 768px) and (max-width: 1024px) {}
+@media (min-width: 1025px) {}
