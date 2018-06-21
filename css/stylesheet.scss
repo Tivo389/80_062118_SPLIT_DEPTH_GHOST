@@ -18,40 +18,65 @@
 .viewPort {
   width: 15vw;
   height: 15vw;
+  min-height: 100px;
+  min-width: 100px;
+  max-height: 150px;
+  max-width: 150px;
   background-color: #150831;
   border-radius: 2.5%;
   overflow: hidden;
   position: relative;
 }
 
+p {
+  font-size: 1.6rem;
+  font-weight: bolder;
+  color: $colorGray;
+  text-align: center;
+  + p {
+    margin-top: 0;
+  }
+  &:first-child {
+    margin-top: 0.5em;
+  }
+}
 
 
 // START GHOST STYLES
-@keyframes float {
-  0% {transform: translate(-50%, -50%);}
-  33% {transform: translate(-50%, -45%);}
-  66% {transform: translate(-50%, -55%);}
-  100% {transform: translate(-50%, -50%);}
+@keyframes ghostFloat {
+  0% {transform: translate(0%, 0%);}
+  33% {transform: translate(0%, 10%);}
+  66% {transform: translate(0%, -10%);}
+  100% {transform: translate(0%, 0%);}
 }
-@keyframes ghostFrame {
-  0% {transform: translate(100%, 0%);}
-  100% {transform: translate(-100%, 0%);}
+@keyframes ghostMove {
+  0% {transform: translate(0%, 0%);}
+  100% {transform: translate(-237.5%, 0%);}
 }
-object[data="images/ghost_front.svg"] {
-  width: 75%;
-  animation: 2s ease-in-out infinite alternate float;
+@keyframes ghostSprite {
+  100% {transform: translateX(-100%);}
+}
+
+object[data="images/ghost_sideSprite.svg"] {
+  animation: 0.35s infinite ghostSprite steps(2);
+  left: 0;
   position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  left: 50%;
+  top: 0;
+  width: 200%;
 }
-.ghostFrame {
+.ghostMove {
   position: relative;
-  top: 0%;
-  left: 0%;
-  height: 100%;
+  top: 12.5%;
+  left: 112.5%;
+  width: 75%;
+  height: 75%;
+  animation: 2s ease-in-out infinite ghostMove;
+}
+.ghostFloat {
   width: 100%;
-  animation: 5s cubic-bezier(1.0, 0, 0.5, 0.5) infinite ghostFrame;
+  height: 100%;
+  overflow: hidden;
+  animation: 2s ease-in-out infinite ghostFloat;
 }
 // END GHOST STYLES
 
@@ -67,26 +92,42 @@ object[data="images/ghost_front.svg"] {
   80% {transform: rotate(5deg);}
   100% {transform: rotate(0deg);}
 }
-.bellFrame {
-  width: calc(320px * 0.15);
+@keyframes bellSprite {
+  100% {transform: translateX(-100%);}
 }
-object[data="images/bell.svg"] {
-  animation: 1s infinite shakeBell linear;
-  width: 100%;
-  margin-top: 100%;
+.shakeBell {
+  animation: 0.25s shakeBell linear;
+  animation-play-state: paused;
+  height: 50px;
+  overflow: hidden;
+  position: relative;
   transform-origin: 50% 12.5%;
-  // position: absolute;
-  // bottom: 5.833333%;
-  // left: 50%;
-  // z-index: 1000;
+  width: 50px;
+  &.inactive {
+    animation: initial;
+    object[data="images/bellSprite.svg"] {
+      animation: initial;
+    }
+  }
+  &.active {
+    animation-play-state: initial;
+  }
+}
+object[data="images/bellSprite.svg"] {
+  animation: 0.25s bellSprite steps(4);
+  animation-play-state: inherit;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 400%;
+}
+.bellHover {
+  margin-top: 50px;
   &:hover {
+    transform-origin: center;
     transform: scale(1.1);
   }
 }
-// .propeller {
-//   animation: 0.25s linear infinite propeller;
-//   transform-origin: 62px 60px; // Got center coordinates from Sketch App.
-// }
 // // END BELL STYLES
 
 

@@ -399,73 +399,102 @@ a {
 .viewPort {
   width: 15vw;
   height: 15vw;
+  min-height: 100px;
+  min-width: 100px;
+  max-height: 150px;
+  max-width: 150px;
   background-color: #150831;
   border-radius: 2.5%;
   overflow: hidden;
   position: relative; }
 
-@-webkit-keyframes float {
+p {
+  font-size: 1.6rem;
+  font-weight: bolder;
+  color: #777777;
+  text-align: center; }
+  p + p {
+    margin-top: 0; }
+  p:first-child {
+    margin-top: 0.5em; }
+
+@-webkit-keyframes ghostFloat {
   0% {
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); }
+    -webkit-transform: translate(0%, 0%);
+    transform: translate(0%, 0%); }
   33% {
-    -webkit-transform: translate(-50%, -45%);
-    transform: translate(-50%, -45%); }
+    -webkit-transform: translate(0%, 10%);
+    transform: translate(0%, 10%); }
   66% {
-    -webkit-transform: translate(-50%, -55%);
-    transform: translate(-50%, -55%); }
+    -webkit-transform: translate(0%, -10%);
+    transform: translate(0%, -10%); }
   100% {
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); } }
+    -webkit-transform: translate(0%, 0%);
+    transform: translate(0%, 0%); } }
 
-@keyframes float {
+@keyframes ghostFloat {
   0% {
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); }
+    -webkit-transform: translate(0%, 0%);
+    transform: translate(0%, 0%); }
   33% {
-    -webkit-transform: translate(-50%, -45%);
-    transform: translate(-50%, -45%); }
+    -webkit-transform: translate(0%, 10%);
+    transform: translate(0%, 10%); }
   66% {
-    -webkit-transform: translate(-50%, -55%);
-    transform: translate(-50%, -55%); }
+    -webkit-transform: translate(0%, -10%);
+    transform: translate(0%, -10%); }
   100% {
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); } }
+    -webkit-transform: translate(0%, 0%);
+    transform: translate(0%, 0%); } }
 
-@-webkit-keyframes ghostFrame {
+@-webkit-keyframes ghostMove {
   0% {
-    -webkit-transform: translate(100%, 0%);
-    transform: translate(100%, 0%); }
+    -webkit-transform: translate(0%, 0%);
+    transform: translate(0%, 0%); }
   100% {
-    -webkit-transform: translate(-100%, 0%);
-    transform: translate(-100%, 0%); } }
+    -webkit-transform: translate(-237.5%, 0%);
+    transform: translate(-237.5%, 0%); } }
 
-@keyframes ghostFrame {
+@keyframes ghostMove {
   0% {
-    -webkit-transform: translate(100%, 0%);
-    transform: translate(100%, 0%); }
+    -webkit-transform: translate(0%, 0%);
+    transform: translate(0%, 0%); }
   100% {
-    -webkit-transform: translate(-100%, 0%);
-    transform: translate(-100%, 0%); } }
+    -webkit-transform: translate(-237.5%, 0%);
+    transform: translate(-237.5%, 0%); } }
 
-object[data="images/ghost_front.svg"] {
-  width: 75%;
-  -webkit-animation: 2s ease-in-out infinite alternate float;
-  animation: 2s ease-in-out infinite alternate float;
+@-webkit-keyframes ghostSprite {
+  100% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%); } }
+
+@keyframes ghostSprite {
+  100% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%); } }
+
+object[data="images/ghost_sideSprite.svg"] {
+  -webkit-animation: 0.35s infinite ghostSprite steps(2);
+  animation: 0.35s infinite ghostSprite steps(2);
+  left: 0;
   position: absolute;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  left: 50%; }
+  top: 0;
+  width: 200%; }
 
-.ghostFrame {
+.ghostMove {
   position: relative;
-  top: 0%;
-  left: 0%;
-  height: 100%;
+  top: 12.5%;
+  left: 112.5%;
+  width: 75%;
+  height: 75%;
+  -webkit-animation: 2s ease-in-out infinite ghostMove;
+  animation: 2s ease-in-out infinite ghostMove; }
+
+.ghostFloat {
   width: 100%;
-  -webkit-animation: 5s cubic-bezier(1, 0, 0.5, 0.5) infinite ghostFrame;
-  animation: 5s cubic-bezier(1, 0, 0.5, 0.5) infinite ghostFrame; }
+  height: 100%;
+  overflow: hidden;
+  -webkit-animation: 2s ease-in-out infinite ghostFloat;
+  animation: 2s ease-in-out infinite ghostFloat; }
 
 @-webkit-keyframes shakeBell {
   0% {
@@ -519,16 +548,51 @@ object[data="images/ghost_front.svg"] {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); } }
 
-.bellFrame {
-  width: calc(320px * 0.15); }
+@-webkit-keyframes bellSprite {
+  100% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%); } }
 
-object[data="images/bell.svg"] {
-  -webkit-animation: 1s infinite shakeBell linear;
-  animation: 1s infinite shakeBell linear;
-  width: 100%;
-  margin-top: 100%;
+@keyframes bellSprite {
+  100% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%); } }
+
+.shakeBell {
+  -webkit-animation: 0.25s shakeBell linear;
+  animation: 0.25s shakeBell linear;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+  height: 50px;
+  overflow: hidden;
+  position: relative;
   -webkit-transform-origin: 50% 12.5%;
-  transform-origin: 50% 12.5%; }
-  object[data="images/bell.svg"]:hover {
+  transform-origin: 50% 12.5%;
+  width: 50px; }
+  .shakeBell.inactive {
+    -webkit-animation: initial;
+    animation: initial; }
+    .shakeBell.inactive object[data="images/bellSprite.svg"] {
+      -webkit-animation: initial;
+      animation: initial; }
+  .shakeBell.active {
+    -webkit-animation-play-state: initial;
+    animation-play-state: initial; }
+
+object[data="images/bellSprite.svg"] {
+  -webkit-animation: 0.25s bellSprite steps(4);
+  animation: 0.25s bellSprite steps(4);
+  -webkit-animation-play-state: inherit;
+  animation-play-state: inherit;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 400%; }
+
+.bellHover {
+  margin-top: 50px; }
+  .bellHover:hover {
+    -webkit-transform-origin: center;
+    transform-origin: center;
     -webkit-transform: scale(1.1);
     transform: scale(1.1); }
