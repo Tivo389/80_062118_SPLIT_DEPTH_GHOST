@@ -14,7 +14,7 @@
 
 <div class="mainWrapper">
   <div class="viewPort">
-    <div class="ghostMove">
+    <div class="ghostMove inactive">
       <div class="ghostFloat">
         <object data="images/ghost_sideSprite.svg" type="image/svg+xml"></object>
       </div>
@@ -48,18 +48,20 @@
     </div>
   </div>
   <div class="bellHover">
-    <div class="shakeBell inactive">
+    <div class="shakeBell inactive" data-key="01">
       <object data="images/bellSprite.svg" type="image/svg+xml"></object>
+      <object class="hidden" data="images/bellBroken.svg" type="image/svg+xml"></object>
     </div>
   </div>
   <div class="textWrapper">
-    <p class="bellCount">0</p>
     <p class="message">Ring the bell...</p>
+    <p class="volWarning">(...after checking your volume)</p>
   </div>
 </div>
 
 
-
-</body>
+<audio src="audio/bell.mp3"></audio>
+<audio src="audio/crack.mp3"></audio>
 <script src="js/script.js"></script>
+</body>
 </html>
