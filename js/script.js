@@ -67,7 +67,7 @@ function handleBellCount() {
       audioCrack.play();
       audioBell.loop = false;
       message.textContent = '[ E R R O R ]';
-    }, 4000);
+    }, 3500);
   }
 }
 
