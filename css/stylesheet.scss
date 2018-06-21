@@ -13,6 +13,11 @@
   width: 100vw;
   overflow: hidden;
   flex-direction: column;
+  background-color: #150831;
+}
+
+.hidden {
+  display: none;
 }
 
 .viewPort {
@@ -22,10 +27,12 @@
   min-width: 100px;
   max-height: 150px;
   max-width: 150px;
-  background-color: #150831;
+  background-color: #270F5C;
   border-radius: 2.5%;
   overflow: hidden;
-  position: relative;
+  &.showOverflow {
+    overflow: initial;
+  }
 }
 
 p {
@@ -44,25 +51,76 @@ p {
 
 // START GHOST STYLES
 @keyframes ghostFloat {
-  0% {transform: translate(0%, 0%);}
-  33% {transform: translate(0%, 10%);}
-  66% {transform: translate(0%, -10%);}
-  100% {transform: translate(0%, 0%);}
+  0% { transform: translate(0%, 0%); }
+  33% { transform: translate(0%, 15%); }
+  66% { transform: translate(0%, -15%); }
+  100% { transform: translate(0%, 0%); }
 }
 @keyframes ghostMove {
-  0% {transform: translate(0%, 0%);}
-  100% {transform: translate(-237.5%, 0%);}
+  0% { transform: translate(0%, 0%); }
+  100% { transform: translate(-250%, 0%); }
 }
 @keyframes ghostSprite {
-  100% {transform: translateX(-100%);}
+  100% { transform: translateX(-100%); }
 }
-
-object[data="images/ghost_sideSprite.svg"] {
+@keyframes ghostOne {
+  35% {
+    transform: translate(-20vw, -25vh) scale(2.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-100vw, -20vh) scale(8);
+    opacity: 0;
+  }
+}
+@keyframes ghostTwo {
+  25% {
+    transform: translate(15vw, 20vh) scale(3.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(40vw, 60vh) scale(15);
+    opacity: 0;
+  }
+}
+@keyframes ghostThree {
+  45% {
+    transform: translate(10vw, -15vh) scale(3.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-5vw, 25vh) scale(15);
+    opacity: 0;
+  }
+}
+@keyframes ghostFour {
+  20% {
+    transform: translate(-10vw, 15vh) scale(4);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-30vw, 40vh) scale(15);
+    opacity: 0;
+  }
+}
+@keyframes ghostFive {
+  30% {
+    transform: translate(5vw, 5vh) scale(5);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(60vw, -90vh) scale(16);
+    opacity: 0;
+  }
+}
+object[data="images/ghost_sideSprite.svg"],
+object[data="images/ghost_frontSprite.svg"] {
   animation: 0.35s infinite ghostSprite steps(2);
   left: 0;
   position: absolute;
   top: 0;
   width: 200%;
+  opacity: 0.85;
 }
 .ghostMove {
   position: relative;
@@ -76,24 +134,63 @@ object[data="images/ghost_sideSprite.svg"] {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  animation: 2s ease-in-out infinite ghostFloat;
+  animation: 1.5s ease-in-out infinite ghostFloat;
+}
+.ghostAll {
+  position: relative;
+  top: 12.5%;
+  left: 12.5%;
+  width: 75%;
+  height: 75%;
+  z-index: 1000;
+}
+.escapeGhost {
+  position: absolute;
+  top: 12.5%;
+  left: 12.5%;
+  width: 100%;
+  height: 100%;
+  animation-play-state: paused;
+  opacity: 0;
+}
+.ghostAll > .escapeGhost.active {
+  &:nth-child(1) {
+    animation: 3s ease-in-out infinite ghostOne;
+  }
+  &:nth-child(2) {
+    animation: 3s ease-in-out infinite ghostTwo;
+    animation-delay: 1.0s;
+  }
+  &:nth-child(3) {
+    animation: 3s ease-in-out infinite ghostThree;
+    animation-delay: 1.5s;
+  }
+  &:nth-child(4) {
+    animation: 3s ease-in-out infinite ghostFour;
+    animation-delay: 2.0s;
+  }
+  &:nth-child(5) {
+    animation: 3s ease-in-out infinite ghostFive;
+    animation-delay: 2.5s;
+  }
 }
 // END GHOST STYLES
 
 
+
 // // START BELL STYLES
 @keyframes shakeBell {
-  0% {transform: rotate(0deg);}
-  16% {transform: rotate(-5deg);}
-  32% {transform: rotate(5deg);}
-  48% {transform: rotate(-5deg);}
-  48% {transform: rotate(5deg);}
-  64% {transform: rotate(-5deg);}
-  80% {transform: rotate(5deg);}
-  100% {transform: rotate(0deg);}
+  0% { transform: rotate(0deg); }
+  16% { transform: rotate(-5deg); }
+  32% { transform: rotate(5deg); }
+  48% { transform: rotate(-5deg); }
+  48% { transform: rotate(5deg); }
+  64% { transform: rotate(-5deg); }
+  80% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
 }
 @keyframes bellSprite {
-  100% {transform: translateX(-100%);}
+  100% { transform: translateX(-100%); }
 }
 .shakeBell {
   animation: 0.25s shakeBell linear;
